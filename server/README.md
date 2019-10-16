@@ -18,7 +18,7 @@ composer install
 php artisan key:generate
 ```
 
-4. Configure .env file.
+4. Configure .env file (copy from .env.example).
 
 ```
 DB_CONNECTION=mysql
@@ -51,25 +51,25 @@ php artisan passport:install
 
 **Authentication**
 
--   POST | api/v1/auth/login
--   POST | api/v1/auth/signup
--   GET | api/v1/auth/signup/activate/{token}
--   GET | api/v1/auth/user
--   GET | api/v1/auth/logout
+-   POST    api/v1/auth/login
+-   POST    api/v1/auth/signup
+-   GET     api/v1/auth/signup/activate/{token}
+-   GET     api/v1/auth/user
+-   GET     api/v1/auth/logout
 
 **Password reset**
 
--   POST | api/v1/password/token/create
--   GET | api/v1/password/token/find/{token}
--   POST | api/v1/password/token/reset
+-   POST    api/v1/password/token/create
+-   GET     api/v1/password/token/find/{token}
+-   POST    api/v1/password/token/reset
 
 **Seeding**
 
 ```bash
 php artisan db:seed
 ```
-
+**Credential**
 ```
-user: root@root.com
+account: root@root.com
 password: gottmituns
 ```
