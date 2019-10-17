@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Laravel\Passport\Client as OAuthClient;
+use Laravel\Passport\Passport;
+use Webpatser\Uuid\Uuid;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        Passport::ignoreMigrations();
     }
 
     /**
@@ -23,6 +26,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        OAuthClient::creating(function (OAuthClient $client) {
+            $client->incrementing = false;
+            $client->id = (string) Uuid::generate(4);
+        });
+
+        OAuthClient::retrieved(function (OAuthClient $client) {
+            $client->incrementing = false;
+        });
     }
 }

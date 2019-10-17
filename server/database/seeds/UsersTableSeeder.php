@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Webpatser\Uuid\Uuid;
 
 class UsersTableSeeder extends Seeder
 {
@@ -13,6 +14,7 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
+            'id' => (string) Uuid::generate(4),
             'name' => 'Supreme',
             'email' => 'root@root.com',
             'password' => bcrypt('gottmituns'),
