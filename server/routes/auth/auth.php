@@ -13,7 +13,7 @@ Route::group(['prefix' => 'v1'], function () {
             'middleware' => 'auth:api'
         ], function () {
             Route::get('logout', 'AuthController@logout')->name('auth.logout');
-            Route::get('user', 'AuthController@user');
+            Route::get('user', 'AuthController@user')->name('auth.user');
         });
     });
 });
