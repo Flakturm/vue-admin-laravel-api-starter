@@ -32,9 +32,6 @@
 
         <env name="DB_CONNECTION" value="sqlite"/>
         <env name="DB_DATABASE" value=":memory:"/>
-<<<<<<< HEAD
         <env name="TELESCOPE_ENABLED" value="false"/>
-=======
->>>>>>> f148adf169efe60b8601afdbe878c73736fdf689
     </php>
 </phpunit>
